@@ -17,15 +17,15 @@
                          alt="Default profile picture">
                 @endif
 
-                <h3 class="profile-username text-center mt-2">Muhammad Tegar Hibatulloh</h3>
+                <h3 class="profile-username text-center mt-2">Agna Putra Prawira</h3>
                 <p class="text-muted text-center">Mahasiswa Teknik Informatika POLINEMA</p>
 
                 <ul class="list-group list-group-unbordered mb-3 text-left">
                     <li class="list-group-item">
-                        <b>Email</b> <span class="float-right">07mtegar@email.com</span>
+                        <b>Email</b> <span class="float-right">agnaputra2321@@email.com</span>
                     </li>
                     <li class="list-group-item">
-                        <b>Asal</b> <span class="float-right">Kota Malang</span>
+                        <b>Asal</b> <span class="float-right">Kota Probolinggo</span>
                     </li>
                     <li class="list-group-item">
                         <b>Bidang</b> <span class="float-right">Teknik Informatika</span>
