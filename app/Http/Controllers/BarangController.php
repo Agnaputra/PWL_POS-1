@@ -63,7 +63,12 @@ class BarangController extends Controller
 
         $activeMenu = 'barang';
 
-        return view('barang.show', compact('breadcrumb', 'page', 'barang', 'activeMenu'));
+        return view('barang.show_ajax', [
+            'breadcrumb' => $breadcrumb,
+            'page' => $page,
+            'barang' => $barang,
+            'activeMenu' => $activeMenu
+        ]);
     }
 
 
@@ -146,7 +151,7 @@ class BarangController extends Controller
                 return $barang->kategori ? $barang->kategori->kategori_nama : '';
             })
             ->addColumn('action', function ($barang) {
-                $btn = '<button onclick="modalAction(\'' . url('/barang/' . $barang->barang_id . '/show_ajax') . '\')" class="btn btn-info btn-sm">Detail</button> ';
+                $btn = '<button onclick="modalAction(\'' . url('/barang/' . $barang->barang_id) . '\')" class="btn btn-info btn-sm">Detail</button> ';
                 $btn .= '<button onclick="modalAction(\'' . url('/barang/' . $barang->barang_id . '/edit_ajax') . '\')" class="btn btn-warning btn-sm">Edit</button> ';
                 $btn .= '<button onclick="modalAction(\'' . url('/barang/' . $barang->barang_id . '/delete_ajax') . '\')" class="btn btn-danger btn-sm">Delete</button> ';
                 return $btn;

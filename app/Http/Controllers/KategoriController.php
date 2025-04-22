@@ -55,7 +55,12 @@ class KategoriController extends Controller
 
         $activeMenu = 'kategori';
 
-        return view('kategori.show', compact('breadcrumb', 'page', 'kategori', 'activeMenu'));
+        return view('kategori.show_ajax', [
+            'breadcrumb' => $breadcrumb,
+            'page' => $page,
+            'kategori' => $kategori,
+            'activeMenu' => $activeMenu
+        ]);
     }
 
     public function list(Request $request)
@@ -65,7 +70,7 @@ class KategoriController extends Controller
         return DataTables::of($kategoris)
             ->addIndexColumn()
             ->addColumn('action', function ($kategori) {
-                $btn = '<button onclick="modalAction(\'' . url('/kategori/' . $kategori->kategori_id . '/show_ajax') . '\')" class="btn btn-info btn-sm">Detail</button> ';
+                $btn = '<button onclick="modalAction(\'' . url('/kategori/' . $kategori->kategori_id) . '\')" class="btn btn-info btn-sm">Detail</button> ';
                 $btn .= '<button onclick="modalAction(\'' . url('/kategori/' . $kategori->kategori_id . '/edit_ajax') . '\')" class="btn btn-warning btn-sm">Edit</button> ';
                 $btn .= '<button onclick="modalAction(\'' . url('/kategori/' . $kategori->kategori_id . '/delete_ajax') . '\')" class="btn btn-danger btn-sm">Delete</button> ';
                 return $btn;

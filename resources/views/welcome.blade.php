@@ -7,10 +7,11 @@
         <!-- Profile Card -->
         <div class="card card-primary card-outline">
             <div class="card-body box-profile text-center">
-                @if (session('photo'))
-                    <img class="profile-user-img img-fluid img-circle"
-                         src="{{ asset('storage/' . session('photo')) }}"
-                         alt="User profile picture">
+                @if (session()->has('photo'))
+                   <img class="profile-user-img img-fluid img-circle"
+                    src="{{ asset('storage/' . session('photo')) . '?v=' . time() }}"
+                     alt="User profile picture">
+
                 @else
                     <img class="profile-user-img img-fluid img-circle"
                          src="https://ui-avatars.com/api/?name=User&background=random"
@@ -28,7 +29,7 @@
                         <b>Asal</b> <span class="float-right">Kota Probolinggo</span>
                     </li>
                     <li class="list-group-item">
-                        <b>Bidang</b> <span class="float-right">Teknik Informatika</span>
+                        <b>Prodi</b> <span class="float-right">Teknik Informatika</span>
                     </li>
                 </ul>
             </div>
@@ -39,7 +40,7 @@
         <!-- Upload Photo Form -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Upload Foto Profil</h3>
+                <h3 class="card-title">Upload Foto Profile</h3>
             </div>
             <div class="card-body">
                 <form action="{{ route('profile.upload') }}" method="POST" enctype="multipart/form-data">

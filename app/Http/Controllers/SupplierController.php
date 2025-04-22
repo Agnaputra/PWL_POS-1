@@ -57,7 +57,12 @@ class SupplierController extends Controller
 
         $activeMenu = 'supplier';
 
-        return view('supplier.show', compact('breadcrumb', 'page', 'supplier', 'activeMenu'));
+        return view('supplier.show_ajax', [
+            'breadcrumb' => $breadcrumb,
+            'page' => $page,
+            'supplier' => $supplier,
+            'activeMenu' => $activeMenu
+        ]);
     }
 
 
@@ -137,7 +142,7 @@ class SupplierController extends Controller
         return DataTables::of($suppliers)
             ->addIndexColumn()
             ->addColumn('action', function ($supplier) {
-                $btn = '<button onclick="modalAction(\'' . url('/supplier/' . $supplier->supplier_id . '/show_ajax') . '\')" class="btn btn-info btn-sm">Detail</button> ';
+                $btn = '<button onclick="modalAction(\'' . url('/supplier/' . $supplier->supplier_id) . '\')" class="btn btn-info btn-sm">Detail</button> ';
                 $btn .= '<button onclick="modalAction(\'' . url('/supplier/' . $supplier->supplier_id . '/edit_ajax') . '\')" class="btn btn-warning btn-sm">Edit</button> ';
                 $btn .= '<button onclick="modalAction(\'' . url('/supplier/' . $supplier->supplier_id . '/delete_ajax') . '\')" class="btn btn-danger btn-sm">Delete</button> ';
                 return $btn;
