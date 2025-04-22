@@ -23,10 +23,10 @@
 
                 <ul class="list-group list-group-unbordered mb-3 text-left">
                     <li class="list-group-item">
-                        <b>Email</b> <span class="float-right">agnaputra2321@@email.com</span>
+                        <b>Email</b> <span class="float-right">agenaputra@email.com</span>
                     </li>
                     <li class="list-group-item">
-                        <b>Asal</b> <span class="float-right">Kota Probolinggo</span>
+                        <b>Country</b> <span class="float-right">Kota Malang</span>
                     </li>
                     <li class="list-group-item">
                         <b>Prodi</b> <span class="float-right">Teknik Informatika</span>
